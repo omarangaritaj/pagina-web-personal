@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
-
   <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <title>{% block title %}{% endblock title %} | Omar Angarita</title>
 
     <!-- Estilos y fuentes del template  -->
     {% load static %}
-    <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet'%}" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href="{% static 'core/css/clean-blog.min.css' %}" rel="stylesheet">
-
+    <link
+      href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css'%}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css'%}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="{% static 'core/css/clean-blog.min.css' %}" rel="stylesheet" />
   </head>
 
   <body>
-
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">Omar Angarita</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           Menú
           <i class="fa fa-bars"></i>
         </button>
@@ -48,7 +70,12 @@
     </nav>
 
     <!-- Cabecera -->
-    <header class="masthead" style="background-image: url('{% block background %}{% endblock background %}')">
+    <header
+      class="masthead"
+      style="
+        background-image: url('{% block background %}{% endblock background %}');
+      "
+    >
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -62,9 +89,13 @@
     </header>
 
     <!-- contenido -->
-    {% block content %}{% endblock content %}
+    <div class="container">
+      <div class="row">{% block content %}{% endblock content %}</div>
+    </div>
+
 
     <!-- Pié de página -->
+    {% if request.path != "/" %}<hr>{% endif %}
     <footer>
       <div class="container">
         <div class="row">
@@ -95,7 +126,9 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; 2021 · Omar Angarita (Ingeniero Mecánico) </p>
+            <p class="copyright text-muted">
+              Copyright &copy; 2021 · Omar Angarita (Ingeniero Mecánico)
+            </p>
           </div>
         </div>
       </div>
@@ -103,9 +136,7 @@
 
     <!-- Bootstrap y Javascripts -->
     <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/clean-blog.min.js' %}"></script>
-
+    <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'core/js/clean-blog.min.js' %}"></script>
   </body>
-
 </html>
