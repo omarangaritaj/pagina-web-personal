@@ -1,2 +1,6 @@
 /.directory
 /db.sqlite3
+__pycache__
+core/__pycache__
+c1/__pycache__
+portafolio/__pycache__
