@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 def home(request):
     return render(request, 'core/home.html')
@@ -9,5 +9,3 @@ def about(request):
 def contact(request):
     return render(request, 'core/contact.html')
 
-def portfolio(request):
-    return render(request, 'core/portfolio.html')
